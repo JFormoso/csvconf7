@@ -10,6 +10,7 @@ Tareas:
 - [ ] Criterio para identificar a los usuarios influyentes: usuarios individuales que retweetean una cuenta (filtrando spam y self-promoters) - Mathilda Åkerlund, 2020.
 - [ ] Extraer la info de la bio de cada usuario y analizar la frecuencia de las palabras que utilizan para ver si identificamos comunidades que no hayamos tenido en cuenta. 
 - [ ] Crear una tabla con el ranking de cada usuario, si pertenece o no a una comunidad y a que comunidad pertenece.
+       - Link a la tabla: https://docs.google.com/spreadsheets/d/1eRSui0DTtGffyGyGsW2fkyzYSUf-3LPDQ4Y_x6V6CcY/edit?usp=sharing
 - [ ] Buscar un tutorial para crear la tabla de nodos y aristas para la creación de una red. 
        
 
