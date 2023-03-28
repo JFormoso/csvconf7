@@ -10,6 +10,19 @@ Tareas:
 - [ ] Criterio para identificar a los usuarios influyentes: usuarios individuales que retweetean una cuenta (filtrando spam y self-promoters) - Mathilda Åkerlund, 2020.
 - [ ] Extraer la info de la bio de cada usuario y analizar la frecuencia de las palabras que utilizan para ver si identificamos comunidades que no hayamos tenido en cuenta. 
 - [ ] Crear una tabla con el ranking de cada usuario, si pertenece o no a una comunidad y a que comunidad pertenece.
+       - Link a la tabla: https://docs.google.com/spreadsheets/d/1eRSui0DTtGffyGyGsW2fkyzYSUf-3LPDQ4Y_x6V6CcY/edit?usp=sharing
 - [ ] Buscar un tutorial para crear la tabla de nodos y aristas para la creación de una red. 
+       
+
+              Tutoriales:
+              R
+
+              1. "Twitter Network Analysis Based on Retweets". https://rpubs.com/subwaymatch/twitter-network-analysis-using-retweets-v1
+              2. "LBB: Social Network Analysis". https://rpubs.com/TeraPutera/social_network_analysis
+              3. "How to do Twitter Network Analysis and Visualization in R". https://levelup.gitconnected.com/how-to-do-amazing-twitter-network-analysis-in-r-2c258537dd7d
+
+              Python
+
+              1. (Actualizado en 2023) "Building A Social Network from Retweets in Python: A Simple Guide". https://jrashford.com/2022/10/14/building-a-social-network-from-retweets-in-python-a-simple-guide/
 - [ ] Analizar los hashtags de los tweets recopilados y la frecuencia con que aparece cada uno. 
 - [ ] Armar una tabla como la de Mathilda Akerlind, 2020.
