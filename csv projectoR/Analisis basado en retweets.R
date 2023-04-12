@@ -4,7 +4,12 @@ library(rtweet)
 
 # search term
 # can be a hashtag (e.g., #microsoft), a mention (e.g., @nike), or a keyword (e.g., iphone)
-search_term = '"ciencia abierta" OR "datos abiertos" OR "software libre"' 
+search_term = '"ciencia abierta" OR "cienciaabierta" OR "open science" OR "openscience" OR
+          "ciência aberta" OR "ciênciaaberta" OR "open source" OR "opensource" OR
+          "open access" OR "openaccess" OR "open research" OR "openresearch" OR
+          "investigación abierta ciencia" OR
+          "código abierto" OR "códigoabierto" OR "pesquisa aberta" OR "pesquisaaberta" OR
+          "códigoaberto" OR "código aberto" OR "acesso aberto" OR "acessoaberto"' 
 
 # search tweets
 # we specify lang = "en" to retrieve only English tweets
@@ -106,7 +111,7 @@ gorder(graph)
 
 deg
 
-top100 <- deg %>% head(n = 21)
+top100 <- deg[which(deg >= 10)]
 
 df_top100 <- top100 %>%
   enframe(name = "screen_name", value="retweeted_count")
@@ -179,4 +184,6 @@ plot(
 
 
 
-write_graph(simplify(network),  "network.gml", format = "gml")# igraph y gephi
+write_graph(simplify(network),  "network1_4.gml", format = "gml")# igraph y gephi
+
+save.image("datos01.04.RData")
