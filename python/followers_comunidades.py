@@ -8,13 +8,17 @@ Created on Tue Apr 11 15:32:49 2023
 # import the module
 import tweepy
 import time
+
   
 # assign the values accordingly
-consumer_key = "BvdmECpOJxfxt5rjKmNV8gRKi"
-consumer_secret = "tcNgxauZovnZZ1UawBIwnK7qbEU2aCDbe2U3EuYx2bAwL9BtZm"
-access_token = "1025507591349329922-1ezXqBUFKSxURGc649vaVYVgxi0EbH"
-access_token_secret = "jP8qj2AeW59co6okKwDXjbsLl6Y3oGdETODm7QwDOtLxv"
+consumer_key = "U2VUelplQUNDNkg4MHVlZmFNMFo6MTpjaQ"
+consumer_secret = "-x_7DHsKIblA6VBv4Cjqa1QY96wbDm6r2Bw1tqkd4k9XUNVHSf"
+access_token = "2276200944-MEsBFk0EtCmOrpL0Bzq3kwRfi87aCMymL8IiZI4"
+access_token_secret = "B0jfwzY9i4dRp3osvaLbfih8BBDrvJfJyWa60rtHA25Wr"
   
+
+
+
 # authorization of consumer key and consumer secret
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
   
@@ -25,10 +29,8 @@ auth.set_access_token(access_token, access_token_secret)
 # calling the api 
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-ids = ['WBDSLA', 'CabanaGcrf', 'FViaLibre', 
-       'ildalatam', 'lasdesistemas', 'AIinclusive', 'CienciaAbiertaL',
-       'ElGatoyLaCaja',
-       'PyladiesEc', 'RLadiesBA', 'RLadiesCDMX', 'RLadiesSantiago']
+ids = ['WBDSLA','ildalatam', 'lasdesistemas', 'AIinclusive', 'CienciaAbiertaL',
+       'ElGatoyLaCaja', 'PyladiesEc', 'RLadiesBA', 'RLadiesCDMX', 'RLadiesSantiago']
 
 
 """
@@ -36,6 +38,7 @@ Me bloquea con el gato y la caja que tiene 117.000 seguidores, ildalatam
 
 
 """
+
 
 sn = 'ildalatam'
 
@@ -45,33 +48,35 @@ keys =ids
 
 followers = []
 
-
-backoff_counter = 1
-while True:
+for page in tweepy.Cursor(api.get_followers, screen_name=sn,
+                    count=200).pages():
     try:
-        for page in tweepy.Cursor(api.get_followers, screen_name=sn,
-                             count=200).pages():
-           for user in page:
-                name = user.screen_name
-                # print(name)
-                followers.append(name)
-                break
-    except tweepy.TweepError as e:
-        print(e.reason)
-        time.sleep(60*backoff_counter)
-        backoff_counter += 1
-        continue
+        for user in page:
+            name = user.screen_name
+            print(name)
+            followers.append(name)
 
-
-
+    except tweepy.errors.TweepyException as e:
+        time.sleep(60*1)
 
         
 dicts[sn] = followers
 
 
+"""
 
+def get_followers(api,user_name):
+    print(f'Getting followers from {user_name}')
+    followers = []
+    for page in tweepy.Cursor(api.get_followers, screen_name=user_name,count=200).pages():
+        try:
+            followers.extend(page)
+        except tweepy.errors.TweepyException as e:
+            print(f'Waiting {60}s for limit:', e)
+            time.sleep(60)
+    return followers
 
-
-
+followers = get_followers(api, sn)
+"""
 
 
